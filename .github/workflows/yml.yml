@@ -1,0 +1,37 @@
+name: tz2yml
+
+on:
+  workflow_dispatch: {}
+  push:
+    
+    
+jobs:
+  Project:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+        
+      - name: Installing pytest
+        run: pip install pytest
+        
+      - id: Testing
+        run: pytest --lf --tb=no > fail_test.txt
+        
+      - name: success
+        if: ${{ success() }}
+        uses: "appleboy/telegram-action@master"
+        with:
+          to: ${{ secrets.CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          args: Все ок
+          
+      - name: failure
+        if: ${{ failure() }}
+        uses: "appleboy/telegram-action@master"
+        with:
+          to: ${{ secrets.CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: Тест gg
+          document: fail_test.txt
