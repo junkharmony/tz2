@@ -3,7 +3,7 @@ name: tz2yml
 on:
   workflow_dispatch: {}
   push:
-    
+    branches: ['dev']
     
 jobs:
   Project:
