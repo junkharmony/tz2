@@ -17,4 +17,6 @@ def test_sum(ar, e):
 def test_mult(ar, e):
     assert main._mult(ar) == e
 
-
+@pytest.mark.parametrize("ar", [([7, 0, -6, -8, -17]), ([20553, 68847, 675, -8299]), ([568, -345, -123456, 874]), ([5676, -780, 347, 35])])
+def test_1bal(ar):
+    assert main._min(ar) < main._max(ar)

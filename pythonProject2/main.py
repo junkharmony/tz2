@@ -5,7 +5,7 @@ f = open('output.txt', 'w')
 
 i = 0
 a=[]
-while i<1000000:
+while i<100000:
     number = random.randint(1, 101)
     a.append(number)
     f.write(str(number))
