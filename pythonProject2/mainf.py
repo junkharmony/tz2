@@ -1,11 +1,12 @@
 import random
 import time
-n=int(input('Введите размер файла:'))
 f = open('output.txt', 'w')
+
 
 i = 0
 a=[]
-while i<n:
+
+while i<100000:
     number = random.randint(1, 101)
     a.append(number)
     f.write(str(number))
@@ -44,5 +45,5 @@ def _mult(ar):
     for i in ar:
         k *=i
     return k
-print('MULT:', _mult(a))
 
+print('MULT:', _mult(a))
