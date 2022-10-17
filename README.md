@@ -1,6 +1,8 @@
 # tz2
 файл с функциями: main.py
 файл с тестами: test_my.py
+
+
 Status of last Deployment:<br>
 <img src="https://github.com/junkharmony/tz2/actions/workflows/yml1.yml/badge.svg"><br>
 Ссылка на бота: https://t.me/+-BwfGhEz5yM5MWYy 
